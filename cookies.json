@@ -1,0 +1,80 @@
+[
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "gid",
+        "path": "/",
+        "value": "yjDK0qKffKqyyj0fDJjyWxquKqxF8l1V2qjK3KIdSqU4kkq8hjhulD888q48qqW8S4dDfWDK"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "loadts",
+        "path": "/",
+        "value": "1767363261200"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "xsecappid",
+        "path": "/",
+        "value": "xhs-pc-web"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "sec_poison_id",
+        "path": "/",
+        "value": "bf6e5c3b-b4ff-4e71-b8e1-f70be7bf3c11"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "websectiga",
+        "path": "/",
+        "value": "29098a4cf41f76ee3f8db19051aaa60c0fc7c5e305572fec762da32d457d76ae"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "acw_tc",
+        "path": "/",
+        "value": "0a00d86f17673630778966686eb76d003d0cfbec59a3442991fa1ad20e13b3"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "unread",
+        "path": "/",
+        "value": "{%22ub%22:%22693d04ff000000000d0364d4%22%2C%22ue%22:%2269475034000000000d00dd9e%22%2C%22uc%22:26}"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "webBuild",
+        "path": "/",
+        "value": "5.4.0"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "id_token",
+        "path": "/",
+        "value": "VjEAAMU5n7TcKoOMbe67ZpRYHGMEGozDzmikM51EqRwwDXoQof797LjvGYzQAmOdYcml+AXq7B17XTFEDbSKKKopYet1E2Vw5TPL+hEG2hz9yfWE2QscocvrKDgAxROnv9UzClWS"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "web_session",
+        "path": "/",
+        "value": "040069b9edde79cdd296dcf9673b4b6bb84684"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "a1",
+        "path": "/",
+        "value": "19adb291763hr0olj5396ec3p4gv9vzo3higb3z6n30000340337"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "webId",
+        "path": "/",
+        "value": "9509a19c1a245f5172b667b550d4959a"
+    },
+    {
+        "domain": ".xiaohongshu.com",
+        "name": "abRequestId",
+        "path": "/",
+        "value": "4ee2f415-27a6-5468-9e2d-5096f2c0b445"
+    }
+]
