@@ -59,30 +59,34 @@ def summarize_notes(note_folder_path, output_file_path, api_key):
     总结指定文件夹内的所有文本文件，并将总结结果写入输出文件。
     """
     zhipuai = ZhipuAI(api_key)
-    all_summaries = []
+    all_text_contents = []
 
     for root, _, files in os.walk(note_folder_path):
         for file_name in files:
             if file_name.endswith(".txt"):
                 file_path = os.path.join(root, file_name)
-                print(f"summarizing: {file_path}")
+                print(f"reading file: {file_path}")
                 try:
                     with open(file_path, "r", encoding="utf-8") as f:
                         content = f.read()
-                    
-                    # 清空之前的消息，只保留系统消息
-                    zhipuai.messages = [zhipuai.messages[0]]
-                    zhipuai.add_message("user", f"请总结以下文本内容：\n{content}")
-                    summary = zhipuai.get_response()
-                    all_summaries.append(f"--- 文件: {file_name} ---\n{summary}\n")
+                        all_text_contents.append(content)
                 except Exception as e:
-                    all_summaries.append(f"--- 文件: {file_name} (错误) ---\n总结失败: {e}\n")
-                    print(f"Failed to summarize {file_name}: {e}")
+                    print(f"Failed to read file {file_name}: {e}")
+    
+    combined_text = "\n\n".join(all_text_contents)
+    if not combined_text:
+        print("No text content found to summarize.")
+        return
+
+    print("Summarizing all collected text content...")
+    # 清空之前的消息，只保留系统消息
+    zhipuai.messages = [zhipuai.messages[0]]
+    zhipuai.add_message("user", f"请总结以下所有文本内容：\n{combined_text}")
+    final_summary = zhipuai.get_response()
 
     with open(output_file_path, "w", encoding="utf-8") as outfile:
-        for summary in all_summaries:
-            outfile.write(summary)
-    print(f"All summaries have been written to: {output_file_path}")
+        outfile.write(final_summary)
+    print(f"All collected text content has been summarized and written to: {output_file_path}")
 
 if __name__ == "__main__":
     api_key = "f7d63519cd5942f0a5907e76346aa1bf.GEzosOeBYThSxlsk" # 智谱AI API密钥

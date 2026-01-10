@@ -142,7 +142,7 @@ def scrape_notes(keywords, output_dir="data"):
         time.sleep(5)
 
         print("start scroll page to load more notes...")
-        for i in range(3):
+        for i in range(5):
             Browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(3)
             print(f"scroll page {i+1} times.")
@@ -153,7 +153,7 @@ def scrape_notes(keywords, output_dir="data"):
             note_elements = Browser.find_elements(By.CSS_SELECTOR, "section.note-item a")
             for element in note_elements:
                 href = element.get_attribute("href")
-                if href and ("/search_result/" in href or "/explore/" in href):
+                if href and "/search_result/" in href:
                     note_links.add(href)
             print(f"successfully extract {len(note_links)} note urls.") 
         except Exception as e:
@@ -164,7 +164,7 @@ def scrape_notes(keywords, output_dir="data"):
         for link in list(note_links)[:40]:
             print(f" start scrape note: {link}")
             Browser.get(link)
-            time.sleep(5)
+            time.sleep(0.5)
 
             note_title = "无标题笔记"
             try:
@@ -215,7 +215,7 @@ def scrape_notes(keywords, output_dir="data"):
                                     f.write(chunk)
                             note_data["images"].append({"path": img_path, "url": img_url})
                             print(f" successfully download image: {img_name}")
-                            time.sleep(0.5)
+                            # time.sleep(0.2)
                         except Exception as img_e:
                             print(f" faild to download image {img_url} error: {img_e}")
 
