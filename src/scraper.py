@@ -16,10 +16,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service # 导入 Service
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-Browser = None # 将 Browser 声明为全局变量
+Browser = None
 # cookies 文件路径：相对根目录
 cookies_path = "./cookies.json"
 
@@ -161,7 +161,7 @@ def scrape_notes(keywords, output_dir="data"):
 
         print(f" find {len(note_links)} note urls")
 
-        for link in list(note_links)[:20]:
+        for link in list(note_links)[:40]:
             print(f" start scrape note: {link}")
             Browser.get(link)
             time.sleep(5)
