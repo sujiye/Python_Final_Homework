@@ -1,3 +1,14 @@
+'''
+发布器模块,负责自动发布./publish/目录下的图片,将其发布到小红书平台
+调用:start_publish(<title>,<content>,<path_image>,<hashtags>)
+参数:
+    title (str): 发布的标题
+    content (str): 发布的正文描述
+    path_image (str): 图片文件的路径
+    hashtags (list): 话题标签列表。
+输出:
+    None
+'''
 import sys
 import time
 import json
@@ -143,7 +154,6 @@ def publish_note(title, content, image_paths=None, hashtags=None):
         if image_paths:
             print(f"uploading {len(image_paths)} images...")
             # 小红书上传图片通常是通过文件输入框，需要找到对应的 input 元素
-            # 这里的选择器可能需要根据实际页面调整
             upload_input = wait_and_find(By.CSS_SELECTOR, "input[type='file']")
             if upload_input:
                 # Selenium 的 send_keys 方法可以直接上传文件
@@ -235,12 +245,11 @@ def start_publisher(title, content, image_paths=None, hashtags=None):
             pass
 
 if __name__ == "__main__":
-    # 示例用法
     example_title = "zzz日历"
     example_content = "绝区零2026年1月月历"
     example_image_paths = [
         os.path.join(os.getcwd(), "publish", "IMG_8981.PNG")
-    ] # 替换为你的图片路径列表，例如 ["/path/to/image1.jpg", "/path/to/image2.png"]
+    ]
     example_hashtags = ["绝区零", "叶瞬光", "日历"]
 
     start_publisher(example_title, example_content, example_image_paths, example_hashtags)

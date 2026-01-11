@@ -17,7 +17,7 @@ class ZhipuAI:
         self.messages = [
             {
                 "role": "system",
-                "content": self._read_prompt_from_file("./prompts.txt")
+                "content": self._read_prompt_from_file("./src/prompts.txt")
             }
         ]
         self.thinking = {"type":"enable"}
